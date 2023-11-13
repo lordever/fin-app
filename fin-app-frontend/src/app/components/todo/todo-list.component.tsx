@@ -17,7 +17,7 @@ const TodoList = () => {
 
     return (
         <div>
-            <h1>Todo List</h1>
+            <h2>Todo List</h2>
             <ul>
                 {todos.map(todo => (
                     <li key={todo.id}>
