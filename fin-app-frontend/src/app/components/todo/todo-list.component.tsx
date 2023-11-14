@@ -16,7 +16,7 @@ const TodoList = () => {
     }, []);
 
     return (
-        <div>
+        <>
             <h2>Todo List</h2>
             <ul>
                 {todos.map(todo => (
@@ -25,7 +25,7 @@ const TodoList = () => {
                     </li>
                 ))}
             </ul>
-        </div>
+        </>
     );
 };
 
