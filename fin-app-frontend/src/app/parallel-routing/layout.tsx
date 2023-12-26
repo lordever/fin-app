@@ -14,10 +14,6 @@ const Layout = ({
     teams: React.ReactNode,
     analytics: React.ReactNode
 }) => {
-    const loginSegments = useSelectedLayoutSegment('auth')
-
-    console.log(loginSegments);
-
     return (
         <div className="test-layout">
             {children}
