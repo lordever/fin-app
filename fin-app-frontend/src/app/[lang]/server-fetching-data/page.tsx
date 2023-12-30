@@ -1,6 +1,6 @@
 import React from 'react';
-import {Todo} from "@/app/components/todo/todo.model";
-import {light} from "@mui/material/styles/createPalette";
+import {Todo} from "@/app/[lang]/components/todo/todo.model";
+
 
 const getData = async (): Promise<Todo[]> => {
     const res = await fetch("http://localhost:8080/todos", {cache: "no-cache"});

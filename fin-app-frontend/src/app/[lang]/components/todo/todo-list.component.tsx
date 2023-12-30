@@ -2,7 +2,7 @@
 
 import React, {useEffect, useState} from 'react';
 import {Todo} from "@/app/components/todo/todo.model";
-import axios, {Axios, AxiosResponse} from "axios";
+import axios, {AxiosResponse} from "axios";
 import {CircularProgress} from "@mui/material";
 
 const TodoList = () => {

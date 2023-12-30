@@ -2,7 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import TestModal from "@/app/components/test-modal/test-modal.component";
 
-const WelcomePage = () => {
+const NextSamplesPage = () => {
     return (
         <>
             <h1>Welcome</h1>
@@ -14,8 +14,9 @@ const WelcomePage = () => {
             <p><Link href={"/test-layout-page"}>Layouts</Link></p>
             <p><Link href={"/request-handlers"}>Request Handlers</Link></p>
             <p><Link href={"/server-fetching-data"}>Server fetching data</Link></p>
+            <p><Link href={"/samples"}>Samples</Link></p>
         </>
     );
 };
 
-export default WelcomePage;
+export default NextSamplesPage;
