@@ -9,7 +9,7 @@ const Page = () => {
 
     return (
         <>
-            <h1>{dictionary.sideMenu.brandName}</h1>
+            <h1>{dictionary.welcome.title}</h1>
         </>
     );
 };

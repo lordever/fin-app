@@ -1,4 +1,7 @@
 {
+  "welcome": {
+    "title": "Welcome to web site on next js!"
+  },
   "sideMenu": {
     "brandName": "Brand Name",
     "dashboard": "Dashboard",
