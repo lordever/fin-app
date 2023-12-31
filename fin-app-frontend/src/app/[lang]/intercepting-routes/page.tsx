@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from "next/link";
-import {photosStub} from "@/app/intercepting-routes/photos.stub";
 import styles from "./page.module.css"
+import {photosStub} from "@/app/[lang]/intercepting-routes/photos.stub";
 
 const InterceptingRoutesPage = () => {
     return (

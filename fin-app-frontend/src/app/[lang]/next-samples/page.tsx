@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import TestModal from "@/app/components/test-modal/test-modal.component";
+import TestModal from "@/app/[lang]/components/test-modal/test-modal.component";
 
 const NextSamplesPage = () => {
     return (
@@ -9,12 +9,12 @@ const NextSamplesPage = () => {
 
             <h2>Parallel roouting</h2>
             <TestModal/>
-            <p><Link href={"/parallel-routing"}>Parallel-routing</Link></p>
-            <p><Link href={"/intercepting-routes"}>Intercepting-routes</Link></p>
-            <p><Link href={"/test-layout-page"}>Layouts</Link></p>
-            <p><Link href={"/request-handlers"}>Request Handlers</Link></p>
-            <p><Link href={"/server-fetching-data"}>Server fetching data</Link></p>
-            <p><Link href={"/samples"}>Samples</Link></p>
+            <p><Link href={"/welcome/parallel-routing"}>Parallel-routing</Link></p>
+            <p><Link href={"/welcome/intercepting-routes"}>Intercepting-routes</Link></p>
+            <p><Link href={"/welcome/test-layout-page"}>Layouts</Link></p>
+            <p><Link href={"/welcome/request-handlers"}>Request Handlers</Link></p>
+            <p><Link href={"/welcome/server-fetching-data"}>Server fetching data</Link></p>
+            <p><Link href={"/welcome/samples"}>Samples</Link></p>
         </>
     );
 };
