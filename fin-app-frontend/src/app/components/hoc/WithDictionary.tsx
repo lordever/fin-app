@@ -2,7 +2,7 @@
 
 import React, {ComponentType, useEffect, useState} from 'react';
 import {Locale} from "@root/i18n-config";
-import {Dictionary} from "@/app/[lang]/types/dictionary.model";
+import {Dictionary} from "@/app/types/dictionary.model";
 import {getDictionary} from "@root/get-dictionary";
 import {CircularProgress} from "@mui/material";
 

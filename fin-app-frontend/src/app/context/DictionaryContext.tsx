@@ -1,5 +1,5 @@
 import React, {createContext, ReactNode, useContext, useEffect, useState} from 'react';
-import {Dictionary, Locale} from "@/app/[lang]/types/dictionary.model";
+import {Dictionary, Locale} from "@/app/types/dictionary.model";
 import {getDictionary} from "@root/get-dictionary";
 import {CircularProgress} from "@mui/material";
 

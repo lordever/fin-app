@@ -1,5 +1,5 @@
 import React from 'react';
-import {Todo} from "@/app/[lang]/components/todo/todo.model";
+import {Todo} from "@/app/components/todo/todo.model";
 
 
 const getData = async (): Promise<Todo[]> => {

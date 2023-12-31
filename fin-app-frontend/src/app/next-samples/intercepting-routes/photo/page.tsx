@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./page.module.css";
-import {photosStub} from "@/app/intercepting-routes/photos.stub";
 import Photo from "@/app/components/photo/photo.component";
+import {photosStub} from "@/app/next-samples/intercepting-routes/photos.stub";
 
 const PhotosPage = () => {
     return (

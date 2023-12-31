@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./photo.module.css";
 
 interface PhotoProps {
-    id: number;
+    id: string;
 }
 
 const Photo = ({id}: PhotoProps) => {

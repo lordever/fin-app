@@ -6,8 +6,8 @@ import React, {useMemo} from "react";
 import {usePathname, useRouter} from "next/navigation";
 import {Button} from "@mui/material";
 import styles from "./common/styles/common.module.scss"
-import {DictionaryProvider} from "@/app/[lang]/context/DictionaryContext";
-import {Locale} from "@/app/[lang]/types/dictionary.model";
+import {DictionaryProvider} from "@/app/context/DictionaryContext";
+import {Locale} from "@/app/types/dictionary.model";
 
 const inter = Ubuntu({weight: '300', subsets: ["latin"]})
 
@@ -26,7 +26,7 @@ export default function RootLayout({
     const router = useRouter();
     const pathname = usePathname();
     const isMainPage = useMemo(() => {
-        return pathname.includes("/welcome");
+        return pathname === "/";
     }, [pathname])
 
     return (

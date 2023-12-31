@@ -4,8 +4,8 @@ import React from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import {useRouter} from "next/navigation";
-import {photosStub} from "@/app/[lang]/intercepting-routes/photos.stub";
-import Photo from "@/app/[lang]/components/photo/photo.component";
+import Photo from "@/app/components/photo/photo.component";
+import {photosStub} from "@/app/next-samples/intercepting-routes/photos.stub";
 
 interface PhotoModalParamsProps {
     params: {
