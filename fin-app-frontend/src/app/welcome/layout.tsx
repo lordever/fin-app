@@ -1,11 +1,17 @@
-import React from 'react';
+'use client'
 
-const WelcomeLayout = ({children, sideMenu}: {children: React.ReactNode, sideMenu: React.ReactNode}) => {
+import React from 'react';
+import {Provider} from "react-redux";
+import {store} from "@/app/store/store";
+
+const WelcomeLayout = ({children, sideMenu}: { children: React.ReactNode, sideMenu: React.ReactNode }) => {
     return (
-        <>
-            {sideMenu}
-            {children}
-        </>
+        <React.StrictMode>
+            <Provider store={store}>
+                {sideMenu}
+                {children}
+            </Provider>
+        </React.StrictMode>
     );
 };
 

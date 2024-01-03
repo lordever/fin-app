@@ -2,12 +2,12 @@
 
 import type {Metadata} from 'next'
 import {Ubuntu} from 'next/font/google'
-import React, {useMemo} from "react";
-import {usePathname, useRouter} from "next/navigation";
-import {Button} from "@mui/material";
+import React from "react";
 import styles from "./common/styles/common.module.scss"
 import {DictionaryProvider} from "@/app/context/DictionaryContext";
 import {Locale} from "@/app/types/dictionary.model";
+import cls from "classnames";
+import "normalize.css/normalize.css";
 
 const inter = Ubuntu({weight: '300', subsets: ["latin"]})
 
@@ -23,18 +23,10 @@ export default function RootLayout({
     children: React.ReactNode,
     params: { lang: Locale }
 }) {
-    const router = useRouter();
-    const pathname = usePathname();
-    const isMainPage = useMemo(() => {
-        return pathname === "/";
-    }, [pathname])
 
     return (
         <html lang={params.lang}>
-        <body className={inter.className}>
-        {
-            !isMainPage && <Button onClick={() => router.back()}>Back</Button>
-        }
+        <body className={cls(inter.className, styles.app)}>
         <div className={styles.app}>
             <DictionaryProvider lang={params.lang}>
                 {children}

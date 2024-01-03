@@ -1,0 +1,137 @@
+@import '../../common/styles/variables.module'; // Импорт переменных SCSS (без .scss)
+
+@mixin menu-item-element-before {
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+  }
+}
+
+@mixin menu-item-element-after {
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+  }
+}
+
+.navigation {
+  position: fixed;
+  width: 350px;
+  height: 100%;
+  background: $blue;
+  border-left: 10px solid $blue;
+  transition: 0.5s;
+  overflow: hidden;
+
+  ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    li {
+      position: relative;
+      width: 100%;
+      list-style: none;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+
+      &:hover {
+        background: $white;
+
+        a {
+          color: $blue;
+
+          @include menu-item-element-before;
+          @include menu-item-element-after;
+        }
+      }
+
+      &:nth-child(1) {
+        margin-bottom: 40px;
+        pointer-events: none;
+      }
+    }
+
+    a {
+      position: relative;
+      width: 100%;
+      display: flex;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  @media (max-width: $max-screen-size) {
+    left: -300px;
+  }
+
+  @media (max-width: $sm-screen-size) {
+    width: 100%;
+    left: -103%;
+    z-index: 1000;
+  }
+}
+
+.active {
+  width: 65px;
+
+  @media (max-width: $max-screen-size) {
+    width: 300px;
+    left: 0;
+  }
+
+  @media (max-width: $sm-screen-size) {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.hovered {
+  background: $white;
+
+  a {
+    color: $blue !important;
+
+    @include menu-item-element-before;
+    @include menu-item-element-after;
+  }
+}
+
+.icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+
+  svg {
+    font-size: 1.75em; //TODO: проверить это
+  }
+}
+
+.title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+}

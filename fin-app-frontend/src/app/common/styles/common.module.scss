@@ -5,4 +5,8 @@
   box-sizing: border-box; // Corrected 'box-shadow' to 'box-sizing'
   position: relative;
   width: 100%;
+
+  ul {
+    padding: 0;
+  }
 }
