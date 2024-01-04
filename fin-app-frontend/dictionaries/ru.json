@@ -1,0 +1,83 @@
+{
+  "welcome": {
+    "title": "Добро пожаловать на веб-сайт на next js!",
+    "sideMenu": "Боковое меню"
+  },
+  "sideMenu": {
+    "brandName": "Название бренда",
+    "dashboard": "Панель управления",
+    "customers": "Клиенты",
+    "message": "Сообщение",
+    "help": "Помощь",
+    "settings": "Настройки",
+    "password": "Пароль",
+    "signOut": "Выход"
+  },
+  "search": {
+    "inputField": "Искать здесь"
+  },
+  "cardBox": {
+    "dailyNews": {
+      "title": "Ежедневные Просмотры",
+      "value": "1,504"
+    },
+    "sales": {
+      "title": "Продажи",
+      "value": "80"
+    },
+    "comments": {
+      "title": "Комментарии",
+      "value": "284"
+    },
+    "earning": {
+      "title": "Доход",
+      "value": "$7,842"
+    }
+  },
+  "details": {
+    "recentOrders": {
+      "title": "Последние Заказы",
+      "viewAll": "Посмотреть Все",
+      "nameRow": "Имя",
+      "priceRow": "Цена",
+      "paymentRow": "Оплата",
+      "statusRow": "Статус"
+    },
+    "recentCustomers": {
+      "title": "Недавние Клиенты"
+    }
+  },
+  "labels": {
+    "delivered": "Доставлено",
+    "pending": "В ожидании",
+    "inProgress": "В процессе",
+    "return": "Возврат",
+    "none": "Нет"
+  },
+  "footer": {
+    "aboutUs": {
+      "title": "О Нас",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    "support": {
+      "title": "Поддержка",
+      "faq": "ЧаВо",
+      "privacyPolicy": "Политика Конфиденциальности",
+      "help": "Помощь",
+      "contact": "Контакт"
+    },
+    "shop": {
+      "title": "Магазин",
+      "men": "Мужчины",
+      "woman": "Женщины",
+      "kids": "Дети",
+      "shoes": "Обувь"
+    },
+    "contactUs": {
+      "title": "Свяжитесь с Нами",
+      "phoneNumber": "+1 234 567 8900",
+      "email": "zoomlex@gmail.com"
+    },
+    "copyrightText": "Авторское право 2023 zoomlex. Все права защищены"
+  }
+}

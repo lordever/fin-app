@@ -5,9 +5,10 @@ import {Ubuntu} from 'next/font/google'
 import React from "react";
 import styles from "./common/styles/common.module.scss"
 import {DictionaryProvider} from "@/app/context/DictionaryContext";
-import {Locale} from "@/app/types/dictionary.model";
 import cls from "classnames";
-import "normalize.css/normalize.css";
+import {store} from "@/app/store/store";
+import {Provider} from "react-redux";
+import SideMenu from "@/app/components/side-menu/side.menu.component";
 
 const inter = Ubuntu({weight: '300', subsets: ["latin"]})
 
@@ -17,20 +18,22 @@ const metadata: Metadata = {
 }
 
 export default function RootLayout({
-                                       children,
-                                       params
+                                       children
                                    }: {
-    children: React.ReactNode,
-    params: { lang: Locale }
+    children: React.ReactNode
 }) {
-
     return (
-        <html lang={params.lang}>
+        <html>
         <body className={cls(inter.className, styles.app)}>
         <div className={styles.app}>
-            <DictionaryProvider lang={params.lang}>
-                {children}
-            </DictionaryProvider>
+            <React.StrictMode>
+                <Provider store={store}>
+                    <DictionaryProvider>
+                        <SideMenu />
+                        {children}
+                    </DictionaryProvider>
+                </Provider>
+            </React.StrictMode>
         </div>
         </body>
         </html>

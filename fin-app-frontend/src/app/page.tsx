@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react';
-import {withDictionary} from "@/app/components/hoc/WithDictionary";
 import {useDictionary} from "@/app/context/DictionaryContext";
 import Link from "next/link";
 
@@ -18,4 +17,4 @@ const Page = () => {
     );
 };
 
-export default withDictionary(Page);
+export default Page;
