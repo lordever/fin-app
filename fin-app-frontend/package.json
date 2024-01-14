@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "antd": "^5.8.4",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/ubuntu": "^5.0.8",
     "@formatjs/intl-localematcher": "0.2.32",
-    "@mui/material": "^5.14.19",
     "@reduxjs/toolkit": "^2.0.1",
     "@types/chart.js": "^2.9.37",
     "axios": "^1.6.1",

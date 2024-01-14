@@ -1,0 +1,65 @@
+@import "../../styles/variables.module";
+
+.button {
+  align-items: center;
+  display: flex;
+  background-color: $blue;
+  color: $white !important;
+  font-size: 16px;
+  justify-content: center;
+
+  &:disabled {
+    color: $black2 !important;
+
+    &:hover {
+      color: $black2 !important;
+    }
+  }
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: $blue !important;
+}
+
+.defaultButton {
+  background-color: $white;
+  color: $blue !important;
+}
+
+.textButton {
+  &:hover {
+    color: $blue !important;
+  }
+}
+
+.dashedButton {
+  background: none !important;
+  color: $blue !important;
+}
+
+.dangerButton {
+  background-color: $red !important;
+}
+
+.warningButton {
+  background-color: $orange !important;
+}
+
+.successButton {
+  background-color: $green !important;
+}
+
+.secondaryButton {
+  background-color: $black2 !important;
+}
+
+.darkButton {
+  background-color: $black1 !important;
+}
+
+.infoButton {
+  background-color: $turquoise !important;
+}

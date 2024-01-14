@@ -1,6 +1,7 @@
 @import '../../common/styles/variables.module';
 
 .main {
+  padding: 0 10px;
   position: absolute;
   width: calc(100% - 350px);
   left: 300px;

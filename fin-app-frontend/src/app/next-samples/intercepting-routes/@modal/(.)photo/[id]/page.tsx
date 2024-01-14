@@ -1,11 +1,10 @@
 'use client'
 
 import React from 'react';
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
 import {useRouter} from "next/navigation";
 import Photo from "@/app/components/photo/photo.component";
 import {photosStub} from "@/app/next-samples/intercepting-routes/photos.stub";
+import Modal from "antd/es/modal/Modal";
 
 interface PhotoModalParamsProps {
     params: {
@@ -37,13 +36,13 @@ const PhotoModal = ({params}: PhotoModalParamsProps) => {
     return (
         <Modal
             open={true}
-            onClose={() => {router.back()}}
+            onCancel={() => {
+                router.back()
+            }}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <Box sx={style}>
-                <Photo id={photo?.id}/>
-            </Box>
+            <Photo id={photo?.id}/>
         </Modal>
     );
 };

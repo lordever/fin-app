@@ -2,8 +2,8 @@
 
 import React, {useEffect, useState} from 'react';
 import axios, {AxiosResponse} from "axios";
-import {CircularProgress} from "@mui/material";
 import {Todo} from "@/app/components/todo/todo.model";
+import {Spin} from "antd";
 
 const TodoList = () => {
     const [loading, setLoading] = useState(true);
@@ -20,7 +20,7 @@ const TodoList = () => {
     }, []);
 
     if (loading) {
-        return <CircularProgress/>
+        return <Spin/>
     }
 
     return (

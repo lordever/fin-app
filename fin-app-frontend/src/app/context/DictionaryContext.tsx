@@ -1,9 +1,9 @@
 import React, {createContext, ReactNode, useContext, useEffect, useState} from 'react';
 import {Dictionary} from "@/app/types/dictionary.model";
 import {getDictionaryUtil} from "@/app/context/get-dictionary.util";
-import {CircularProgress} from "@mui/material";
 import {useSelector} from "react-redux";
 import {selectLocale} from "@/app/store/localization/localization.selector";
+import {Spin} from "antd";
 
 interface DictionaryContextProps {
     dictionary: Dictionary;
@@ -22,7 +22,7 @@ export const DictionaryProvider: React.FC<{ children: ReactNode }> = ({children}
     }, [currentLocale]);
 
     if (!dictionary) {
-        return <CircularProgress/>;
+        return <Spin />;
     }
 
     return <DictionaryContext.Provider value={{dictionary}}>{children}</DictionaryContext.Provider>;

@@ -1,0 +1,21 @@
+@import '../../styles/variables.module';
+
+.warning {
+  background-color: $light-orange;
+  color: $dark-orange;
+}
+
+.success {
+  background-color: $light-green;
+  color: $green;
+}
+
+.error {
+  background-color: $light-red;
+  color: $red;
+}
+
+.info {
+  background-color: $light-turquoise;
+  color: $turquoise;
+}
