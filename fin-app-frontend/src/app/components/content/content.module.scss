@@ -1,0 +1,15 @@
+@import '../../common/styles/variables.module';
+
+.main {
+  position: absolute;
+  width: calc(100% - 350px);
+  left: 300px;
+  min-height: 100vh;
+  background: $white;
+  transition: 0.5s;
+
+  @media (max-width: $max-screen-size) {
+    width: 100%;
+    left: 0;
+  }
+}

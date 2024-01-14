@@ -4,6 +4,7 @@
     "sideMenu": "Side menu"
   },
   "sideMenu": {
+    "showCases": "Showcases",
     "brandName": "Brand Name",
     "dashboard": "Dashboard",
     "customers": "Customers",

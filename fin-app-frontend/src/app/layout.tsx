@@ -9,6 +9,7 @@ import cls from "classnames";
 import {store} from "@/app/store/store";
 import {Provider} from "react-redux";
 import SideMenu from "@/app/components/side-menu/side.menu.component";
+import Content from "@/app/components/content/content.component";
 
 const inter = Ubuntu({weight: '300', subsets: ["latin"]})
 
@@ -29,8 +30,10 @@ export default function RootLayout({
             <React.StrictMode>
                 <Provider store={store}>
                     <DictionaryProvider>
-                        <SideMenu />
-                        {children}
+                        <SideMenu/>
+                        <Content>
+                            {children}
+                        </Content>
                     </DictionaryProvider>
                 </Provider>
             </React.StrictMode>
