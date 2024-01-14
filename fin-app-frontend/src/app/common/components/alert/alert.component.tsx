@@ -5,7 +5,7 @@ import styles from "./alert.module.scss";
 interface Props extends AlertProps {
 }
 
-const generateClassName = (type: 'success' | 'info' | 'warning' | 'error'): string | undefined => {
+const generateClassName = (type?: 'success' | 'info' | 'warning' | 'error'): string | undefined => {
     switch (type) {
         case "warning":
             return styles.warning;
