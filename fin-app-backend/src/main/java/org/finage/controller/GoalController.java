@@ -8,6 +8,7 @@ import jakarta.ws.rs.core.Response;
 import org.finage.model.FinUser;
 import org.finage.model.Goal;
 import org.finage.repository.GoalRepository;
+import org.finage.service.UserService;
 
 import java.util.List;
 
@@ -17,6 +18,9 @@ import java.util.List;
 public class GoalController {
     @Inject
     GoalRepository goalRepository;
+
+    @Inject
+    UserService userService;
 
     @GET
     @Transactional
@@ -28,10 +32,7 @@ public class GoalController {
     @Transactional
     public Response addGoal(Goal goal) {
         if (goal.getUserId() != null) {
-            FinUser user = FinUser.findById(goal.getUserId());
-            if (user == null) {
-                throw new WebApplicationException("User not found", Response.Status.NOT_FOUND);
-            }
+            FinUser user = userService.validateAndGetUser(goal.getUserId());
             goal.setUser(user);
         }
         goal.persist();

@@ -1,7 +1,6 @@
 package org.finage.model;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -9,20 +8,23 @@ import java.util.List;
 @Entity
 public class FinUser extends PanacheEntity {
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "first_name")
     private String firstName;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "last_name")
     private String lastName;
 
     @Column(nullable = false)
-    private int wage;
+    private Double wage;
 
-    @Column()
-    private int freeIncome;
+    @Column(name = "free_income")
+    private Double freeIncome;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Goal> goals;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<Credit> credits;
 
     public String getFirstName() {
         return firstName;
@@ -40,19 +42,19 @@ public class FinUser extends PanacheEntity {
         this.lastName = lastName;
     }
 
-    public int getWage() {
+    public Double getWage() {
         return wage;
     }
 
-    public void setWage(int wage) {
+    public void setWage(Double wage) {
         this.wage = wage;
     }
 
-    public int getFreeIncome() {
+    public Double getFreeIncome() {
         return freeIncome;
     }
 
-    public void setFreeIncome(int freeIncome) {
+    public void setFreeIncome(Double freeIncome) {
         this.freeIncome = freeIncome;
     }
 
@@ -62,5 +64,13 @@ public class FinUser extends PanacheEntity {
 
     public void setGoals(List<Goal> goals) {
         this.goals = goals;
+    }
+
+    public List<Credit> getCredits() {
+        return credits;
+    }
+
+    public void setCredits(List<Credit> credits) {
+        this.credits = credits;
     }
 }
