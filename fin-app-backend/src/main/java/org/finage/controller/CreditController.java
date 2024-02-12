@@ -11,6 +11,7 @@ import org.finage.repository.CreditRepository;
 import org.finage.service.UserService;
 
 import java.util.List;
+import java.util.UUID;
 
 @Path("/credits")
 @Produces(MediaType.APPLICATION_JSON)
@@ -30,15 +31,17 @@ public class CreditController {
 
     @POST
     @Transactional
-    public Response addCredit(Credit credit) {
-        if (credit.getUserId() != null) {
-            FinUser user = userService.validateAndGetUser(credit.getUserId());
-            credit.setUser(user);
+    public Response addCredit(@QueryParam("userId") UUID userId, Credit credit) {
+        FinUser user = userService.validateAndGetUser(userId);
+        if (user == null) {
+            return Response
+                    .status(Response.Status.NOT_FOUND)
+                    .entity(new Error("Not found"))
+                    .build();
         }
-        credit.persist();
-        return Response
-                .status(Response.Status.CREATED)
-                .entity(credit)
-                .build();
+
+        user.addCredit(credit);
+        creditRepository.persist(credit);
+        return Response.status(Response.Status.CREATED).entity(credit).build();
     }
 }

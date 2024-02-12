@@ -1,12 +1,22 @@
 package org.finage.model;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
-public class FinUser extends PanacheEntity {
+@Getter
+@Setter
+public class FinUser extends PanacheEntityBase {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(updatable = false, nullable = false)
+    private UUID id;
 
     @Column(nullable = false, name = "first_name")
     private String firstName;
@@ -20,57 +30,19 @@ public class FinUser extends PanacheEntity {
     @Column(name = "free_income")
     private Double freeIncome;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<Goal> goals;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Goal> goals = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<Credit> credits;
+    private List<Credit> credits = new ArrayList<>();
 
-    public String getFirstName() {
-        return firstName;
+    public void addGoal(Goal goal) {
+        this.goals.add(goal);
+        goal.setUser(this);
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Double getWage() {
-        return wage;
-    }
-
-    public void setWage(Double wage) {
-        this.wage = wage;
-    }
-
-    public Double getFreeIncome() {
-        return freeIncome;
-    }
-
-    public void setFreeIncome(Double freeIncome) {
-        this.freeIncome = freeIncome;
-    }
-
-    public List<Goal> getGoals() {
-        return goals;
-    }
-
-    public void setGoals(List<Goal> goals) {
-        this.goals = goals;
-    }
-
-    public List<Credit> getCredits() {
-        return credits;
-    }
-
-    public void setCredits(List<Credit> credits) {
-        this.credits = credits;
+    public void addCredit(Credit credit) {
+        this.credits.add(credit);
+        credit.setUser(this);
     }
 }

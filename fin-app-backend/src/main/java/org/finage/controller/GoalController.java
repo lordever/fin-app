@@ -11,6 +11,7 @@ import org.finage.repository.GoalRepository;
 import org.finage.service.UserService;
 
 import java.util.List;
+import java.util.UUID;
 
 @Path("/goals")
 @Produces(MediaType.APPLICATION_JSON)
@@ -30,16 +31,18 @@ public class GoalController {
 
     @POST
     @Transactional
-    public Response addGoal(Goal goal) {
-        if (goal.getUserId() != null) {
-            FinUser user = userService.validateAndGetUser(goal.getUserId());
-            goal.setUser(user);
+    public Response addGoal(@QueryParam("userId") UUID userId, Goal goal) {
+        FinUser user = userService.validateAndGetUser(userId);
+        if (user == null) {
+            return Response
+                    .status(Response.Status.NOT_FOUND)
+                    .entity(new Error("Not found"))
+                    .build();
         }
-        goal.persist();
-        return Response
-                .status(Response.Status.CREATED)
-                .entity(goal)
-                .build();
+
+        user.addGoal(goal);
+        goalRepository.persist(goal);
+        return Response.status(Response.Status.CREATED).entity(goal).build();
     }
 
     @GET
