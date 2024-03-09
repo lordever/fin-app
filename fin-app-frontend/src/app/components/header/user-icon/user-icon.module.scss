@@ -1,0 +1,20 @@
+@import '../../../common/styles/variables.module';
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $blue;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  @media (max-width: $sm-screen-size) {
+    font-size: 20px
+  }
+}

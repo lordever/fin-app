@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useMemo} from 'react';
+import React, {FC, useCallback} from 'react';
 import {useDictionary} from "@/app/context/DictionaryContext";
 import {useDispatch, useSelector} from "react-redux";
 import {selectSideMenuActive} from "@/app/store/side-menu/side-menu.selector";

@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import cls from "classnames";
 import styles from "./content.module.scss";

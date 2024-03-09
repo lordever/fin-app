@@ -1,0 +1,22 @@
+@import '../../common/styles/variables.module';
+
+.toggle {
+  position: relative;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  cursor: pointer;
+
+  @media (max-width: $sm-screen-size) {
+    color: $black1;
+    z-index: 10001;
+  }
+}
+
+.active {
+  color: $white;
+}

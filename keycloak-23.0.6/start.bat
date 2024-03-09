@@ -1,0 +1,1 @@
+bin\kc.bat start-dev --spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true
